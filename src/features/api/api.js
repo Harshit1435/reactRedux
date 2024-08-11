@@ -1,16 +1,17 @@
 import { createSlice, nanoid } from "@reduxjs/toolkit";
 import todoSlice from "../todo/todoSlice";
 const initialState = {
-    arr:[{text:'ram',age:23}]
+    arr:[{text:'ram',age:23,id:1}]
 }
 
 export const arrSlice = createSlice({
-    text:'name',
+    name:'string',
     initialState,
     reducers:{
        addItem:(state,action)=>{
         const addtext={
             text:action.payload,
+            age:action.payload,
             id:nanoid()
         }
         state.arr.push(addtext)
